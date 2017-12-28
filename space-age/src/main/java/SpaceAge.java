@@ -1,43 +1,48 @@
+
 class SpaceAge {
 
-    SpaceAge(double seconds) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	static final double secondsInAnEarthYear = 31557600;
+	protected double secondsOfAge;
 
-    double getSeconds() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	SpaceAge(double seconds) {
+		this.secondsOfAge = seconds;
+	}
 
-    double onEarth() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double getSeconds() {
+		return secondsOfAge;
+	}
 
-    double onMercury() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onEarth() {
+		return secondsOfAge / secondsInAnEarthYear;
+	}
 
-    double onVenus() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onMercury() {
+		// the orbital period of Mercury is .2408467 as long as Earth's
+		return secondsOfAge / (secondsInAnEarthYear * .2408467);
+	}
 
-    double onMars() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onVenus() {
+		return secondsOfAge / (secondsInAnEarthYear * .61519726);
+	}
 
-    double onJupiter() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onMars() {
+		return secondsOfAge / (secondsInAnEarthYear * 1.8808158);
+	}
 
-    double onSaturn() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onJupiter() {
+		return secondsOfAge / (secondsInAnEarthYear * 11.862615);
+	}
 
-    double onUranus() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onSaturn() {
+		return secondsOfAge / (secondsInAnEarthYear * 29.447498);
+	}
 
-    double onNeptune() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	double onUranus() {
+		return secondsOfAge / (secondsInAnEarthYear * 84.016846);
+	}
+
+	double onNeptune() {
+		return secondsOfAge / (secondsInAnEarthYear * 164.79132);
+	}
 
 }
