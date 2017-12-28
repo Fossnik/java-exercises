@@ -1,11 +1,24 @@
 class Hamming {
+	String leftStrand;
+	String rightStrand;
 
-    Hamming(String leftStrand, String rightStrand) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	Hamming(String leftStrand, String rightStrand) {
+		if (leftStrand.length() != rightStrand.length())
+			throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
 
-    int getHammingDistance() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+		this.leftStrand = leftStrand;
+		this.rightStrand = rightStrand;
+	}
+
+	int getHammingDistance() {
+		int hammingDistance = 0;
+
+		for (int i = 0; i <= leftStrand.length() - 1; i++) {
+			if (leftStrand.charAt(i) != rightStrand.charAt(i))
+				hammingDistance++;
+		}
+
+		return hammingDistance;
+	}
 
 }
