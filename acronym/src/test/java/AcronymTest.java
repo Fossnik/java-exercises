@@ -12,7 +12,6 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fromOtherTitleCasedPhrases() {
         final String phrase = "Ruby on Rails";
@@ -20,7 +19,6 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithPunctuation() {
         final String phrase = "First In, First Out";
@@ -28,7 +26,6 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fromOtherPhrasesWithPunctuation() {
         final String phrase = "PHP: Hypertext Preprocessor";
@@ -36,7 +33,6 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithNonAcronymAllCapsWord() {
         final String phrase = "GNU Image Manipulation Program";
@@ -44,7 +40,6 @@ public class AcronymTest {
         assertEquals(expected, new Acronym(phrase).get());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fromPhrasesWithPunctuationAndSentenceCasing() {
         final String phrase = "Complementary metal-oxide semiconductor";
