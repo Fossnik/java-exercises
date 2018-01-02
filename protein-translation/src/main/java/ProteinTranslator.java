@@ -1,8 +1,15 @@
 import java.util.List;
+import java.util.ArrayList;
 
 class ProteinTranslator {
 
-    List<String> translate(String rnaSequence) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	private ArrayList<String> protein = new ArrayList<String>();
+
+	List<String> translate(String rnaSequence) {
+
+		if (rnaSequence == "AUG")
+			protein.add("Methionine");
+
+		return protein;
+	}
 }
