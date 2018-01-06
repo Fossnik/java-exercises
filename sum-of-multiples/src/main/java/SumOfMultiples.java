@@ -11,7 +11,7 @@ class SumOfMultiples {
 	SumOfMultiples(int number, int[] set) {
 
 		for (int numerator = 1; numerator < number; numerator++) {
-	    for (int denominator = 0; denominator < set.length; denominator++) {
+			for (int denominator = 0; denominator < set.length; denominator++) {
 
 				if (numerator % set[denominator] == 0) {
 					if (multiples.indexOf(numerator) == -1) {
@@ -26,7 +26,7 @@ class SumOfMultiples {
 	}
 
 	int getSum() {
-			return sum;
+		return sum;
 	}
 
 }
