@@ -11,13 +11,11 @@ class SumOfMultiples {
 	SumOfMultiples(int number, int[] set) {
 
 		for (int numerator = 1; numerator < number; numerator++) {
-			for (int denominator = 0; denominator < set.length; denominator++) {
+			for (int denominator : set) {
 
-				if (numerator % set[denominator] == 0) {
-					if (multiples.indexOf(numerator) == -1) {
-						multiples.add(numerator);
-						sum += numerator;
-					}
+				if (numerator % denominator == 0 & multiples.indexOf(numerator) == -1) {
+					multiples.add(numerator);
+					sum += numerator;
 				}
 
 			}
