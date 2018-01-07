@@ -1,23 +1,25 @@
 class Acronym {
 
-	protected String phrase;
-	protected String acronym = "";
+	private String acronym = "";
+	private Boolean whitespace = true;
 
 	Acronym(String phrase) {
-		this.phrase = phrase;
+
+		// loop through a Char Array of the input phrase, noting whitespaces
+		for (char c : phrase.toCharArray()) {
+			// if preceding char is a space (or dash), add the initial to the acronym
+			if (whitespace == true) {
+				acronym += Character.toUpperCase(c);
+				whitespace = false;
+			}
+			else if (c == ' ' || c == '-') {
+				whitespace = true;
+			}
+
+		}
 	}
 
 	String get() {
-		// assume the first character will be the first initial in the acronym
-		acronym += phrase.toUpperCase().charAt(0);
-
-		// loop through phrase
-		for (int i = 1; i <= phrase.length() - 1; i++) {
-			// if preceding char is a space (or dash), add the initial to the acronym
-			if (phrase.charAt(i - 1) == ' ' || phrase.charAt(i - 1) == '-')
-				acronym += phrase.toUpperCase().charAt(i);
-		}
-
 		return acronym;
 	}
 
