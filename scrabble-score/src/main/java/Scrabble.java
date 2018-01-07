@@ -20,22 +20,22 @@ class Scrabble {
 		for (char c : word.toCharArray()) {
 			switch (c) {
 				case 'Q': case 'Z':
-				wordScore += 2; // 10
+					wordScore += 2; // 10
 				case 'J': case 'X':
-				wordScore += 3; // 8
+					wordScore += 3; // 8
 				case 'K':
-				wordScore++; // 5
+					wordScore++; // 5
 				case 'F': case 'H': case 'V': case 'W': case 'Y':
-				wordScore++; // 4
+					wordScore++; // 4
 				case 'B': case 'C': case 'M': case 'P':
-				wordScore++; // 3
+					wordScore++; // 3
 				case 'D': case 'G':
-				wordScore++; // 2
+					wordScore++; // 2
 				case 'A': case 'E': case 'I': case 'O': case 'U':
 				case 'L': case 'N':	case 'R': case 'S': case 'T':
-				wordScore++; // 1
+					wordScore++; // 1
 				default:
-				continue;
+					continue;
 			}
 		}
 	}
