@@ -7,27 +7,41 @@ class Matrix {
 	}
 
 	int[] getRow(int rowNumber) {
-		String column = "";
-
+		String concat = "";
 		int rows = 0;
+		// build a string from the correct row
 		for (char c : matrix)
 			if (c == '\n')
 				rows++;
 			else if (rows == rowNumber && Character.isDigit(c))
-				column += Character.getNumericValue(c);
-
-		int[] remitArray = new int[column.length()];
+				concat += Character.getNumericValue(c);
 
 		// build an int[]
+		int[] remitArray = new int[concat.length()];
 		int index = 0;
-		for (char c : column.toCharArray())
+		for (char c : concat.toCharArray())
 			remitArray[index++] = Character.getNumericValue(c);
 
 		return remitArray;
 	}
 
 	int[] getColumn(int columnNumber) {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		String concat = "";
+		int column = 0;
+
+		for (char c : matrix)
+			if (c == '\n')
+				column = 0;
+			else if (Character.isDigit(c) && columnNumber == column++)
+				concat += c;
+
+			// build an int[]
+			int[] remitArray = new int[concat.length()];
+			int index = 0;
+			for (char c : concat.toCharArray())
+				remitArray[index++] = Character.getNumericValue(c);
+
+			return remitArray;
 	}
 
 	int getRowsCount() {
