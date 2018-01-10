@@ -75,7 +75,6 @@ public class MatrixTest {
         }
     }
 
-    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class GetFirstRowTest {
         private Matrix matrix;

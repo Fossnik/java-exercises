@@ -1,4 +1,3 @@
-
 class Matrix {
 
 	private char[] matrix;
@@ -8,7 +7,23 @@ class Matrix {
 	}
 
 	int[] getRow(int rowNumber) {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		String column = "";
+
+		int rows = 0;
+		for (char c : matrix)
+			if (c == '\n')
+				rows++;
+			else if (rows == rowNumber && Character.isDigit(c))
+				column += Character.getNumericValue(c);
+
+		int[] remitArray = new int[column.length()];
+
+		// build an int[]
+		int index = 0;
+		for (char c : column.toCharArray())
+			remitArray[index++] = Character.getNumericValue(c);
+
+		return remitArray;
 	}
 
 	int[] getColumn(int columnNumber) {
