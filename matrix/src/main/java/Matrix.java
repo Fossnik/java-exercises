@@ -26,6 +26,14 @@ class Matrix {
 	}
 
 	int getColumnsCount() {
-		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+		int columns = 1;
+		// count whitespace characters
+		for (char c : matrix.toCharArray())
+			if (c == ' ')
+				columns++;
+			else if (c == '\n') // count only first row
+				break;
+
+		return columns;
 	}
 }

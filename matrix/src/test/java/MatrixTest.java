@@ -44,7 +44,6 @@ public class MatrixTest {
         }
     }
 
-    @Ignore("Remove to run test")
     @RunWith(Parameterized.class)
     public static class CountColumnsTest {
         private Matrix matrix;
