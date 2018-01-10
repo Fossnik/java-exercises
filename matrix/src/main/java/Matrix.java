@@ -1,23 +1,31 @@
 
 class Matrix {
 
-    Matrix(String matrixAsString) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	private String matrix;
 
-    int[] getRow(int rowNumber) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	Matrix(String matrixAsString) {
+		this.matrix = matrixAsString;
+	}
 
-    int[] getColumn(int columnNumber) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	int[] getRow(int rowNumber) {
+		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+	}
 
-    int getRowsCount() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	int[] getColumn(int columnNumber) {
+		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+	}
 
-    int getColumnsCount() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-    }
+	int getRowsCount() {
+		int rows = 1;
+		// count newline characters
+		for (char c : matrix.toCharArray())
+			if (c == '\n')
+				rows++;
+
+		return rows;
+	}
+
+	int getColumnsCount() {
+		throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+	}
 }
