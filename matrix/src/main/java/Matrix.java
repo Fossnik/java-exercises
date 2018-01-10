@@ -9,6 +9,7 @@ class Matrix {
 	int[] getRow(int rowNumber) {
 		String concat = "";
 		int rows = 0;
+
 		// build a string from the correct row
 		for (char c : matrix)
 			if (c == '\n')
@@ -29,6 +30,7 @@ class Matrix {
 		String concat = "";
 		int column = 0;
 
+		// build a string when in correct column
 		for (char c : matrix)
 			if (c == '\n')
 				column = 0;
