@@ -1,10 +1,10 @@
 
 class Matrix {
 
-	private String matrix;
+	private char[] matrix;
 
 	Matrix(String matrixAsString) {
-		this.matrix = matrixAsString;
+		this.matrix = matrixAsString.toCharArray();
 	}
 
 	int[] getRow(int rowNumber) {
@@ -18,7 +18,7 @@ class Matrix {
 	int getRowsCount() {
 		int rows = 1;
 		// count newline characters
-		for (char c : matrix.toCharArray())
+		for (char c : matrix)
 			if (c == '\n')
 				rows++;
 
@@ -28,7 +28,7 @@ class Matrix {
 	int getColumnsCount() {
 		int columns = 1;
 		// count whitespace characters
-		for (char c : matrix.toCharArray())
+		for (char c : matrix)
 			if (c == ' ')
 				columns++;
 			else if (c == '\n') // count only first row
