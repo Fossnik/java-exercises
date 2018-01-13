@@ -12,9 +12,16 @@ class Sieve {
 	List<Integer> getPrimes() {
 		List<Integer> primes = new ArrayList<Integer>();
 
-		for (int i = 2; i <= maxPrime / 2 + 1; i++)
-			if (maxPrime % i == 0)
+		for (int i = 2; i <= maxPrime; i++) {
+			boolean isPrime = true;
+			for (int j = 2; j <= i / 2; j++)
+				if (i % j == 0) {
+					isPrime = false;
+					break;
+				}
+			if (isPrime == true)
 				primes.add(i);
+		}
 
 		return primes;
 	}
