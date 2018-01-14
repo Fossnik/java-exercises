@@ -13,7 +13,7 @@ class SumOfMultiples {
 		for (int numerator = 1; numerator < number; numerator++) {
 			for (int denominator : set) {
 
-				if (numerator % denominator == 0 & multiples.indexOf(numerator) == -1) {
+				if (numerator % denominator == 0 && multiples.indexOf(numerator) == -1) {
 					multiples.add(numerator);
 					sum += numerator;
 				}
