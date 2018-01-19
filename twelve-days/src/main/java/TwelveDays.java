@@ -1,6 +1,6 @@
 class TwelveDays {
 
-	private String[] ordinals = new String[] {"zeroeth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"};
+	private final String[] ordinals = new String[] {"zeroeth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"};
 
 	String verse(int verseNumber) {
 		String v = new String("On the " + ordinals[verseNumber] + " day of Christmas my true love gave to me, ");
