@@ -10,12 +10,12 @@ class Sieve {
 		boolean[] notPrime = new boolean[maxPrime+1];
 
 		for (int i = 2; i < Math.sqrt(maxPrime); i++)
-			if (notPrime[i] == false)
+			if (!notPrime[i])
 				for (int j = i * i; j <= maxPrime; j += i)
 					notPrime[j] = true;
 
 		for (int i = 2; i < notPrime.length; i++)
-			if (notPrime[i] == false)
+			if (!notPrime[i])
 				primes.add(i);
 	}
 
