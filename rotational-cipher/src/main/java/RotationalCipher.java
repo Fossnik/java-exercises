@@ -10,10 +10,12 @@ class RotationalCipher {
 		String remit = "";
 
 		for (char c : data.toCharArray())
-			if (Character.isLowerCase(c))
-				remit += (char)(((int)c - (int)'a' + shiftKey) % 26 + (int)'a');
+			if (!(Character.isAlphabetic(c)))
+				remit += c;
+			else if (Character.isLowerCase(c))
+					remit += (char)(((int)c - (int)'a' + shiftKey) % 26 + (int)'a');
 			else
-				remit += (char)(((int)c - (int)'A' + shiftKey) % 26 + (int)'A');
+					remit += (char)(((int)c - (int)'A' + shiftKey) % 26 + (int)'A');
 
 		return remit;
 	}
