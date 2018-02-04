@@ -3,8 +3,7 @@ import java.util.ArrayList;
 
 class KindergartenGarden {
 
-	ArrayList<Plant> remit = new ArrayList<>();
-
+	private ArrayList<Plant> remit = new ArrayList<>();
 	private String garden;
 
 	KindergartenGarden(String garden, String[] students) {
@@ -16,10 +15,10 @@ class KindergartenGarden {
 	}
 
 	List<Plant> getPlantsOfStudent(String student) {
-		int studentIndex = ((int)student.charAt(0) - (int)'A') * 2;
+		int studentLocus = ((int)student.charAt(0) - (int)'A') * 2;
 
 		for (String row : garden.split("\n"))
-			for (int i : new int[]{studentIndex, studentIndex + 1})
+			for (int i : new int[]{studentLocus, studentLocus + 1})
 				switch (row.charAt(i)) {
 					case 'C':
 						remit.add(Plant.CLOVER);
