@@ -19,20 +19,7 @@ class KindergartenGarden {
 
 		for (String row : garden.split("\n"))
 			for (int i : new int[]{studentLocus, studentLocus + 1})
-				switch (row.charAt(i)) {
-					case 'C':
-						remit.add(Plant.CLOVER);
-						break;
-					case 'G':
-						remit.add(Plant.GRASS);
-						break;
-					case 'R':
-						remit.add(Plant.RADISHES);
-						break;
-					case 'V':
-						remit.add(Plant.VIOLETS);
-						break;
-				}
+				remit.add(Plant.getPlant(row.charAt(i)));
 
 		return remit;
 	}
