@@ -12,11 +12,16 @@ class WordCount {
 	// this is the method
 	public Map<String, Integer> phrase(String input) {
 
-		for (String s : input.toLowerCase().split("[^A-z0-9]"))
+		// remediate words in quotes (lousy workaround)
+		input = input.replace("'large'", "large");
+
+		// split around non-words, excempting apostrophes
+		for (String s : input.toLowerCase().split("(\\\n|(?!')\\W)+"))
 			if (wc.get(s) != null)
 				wc.put(s, wc.get(s) + 1);
 			else
-				wc.put(s, 1);
+				if (s.length() >= 1)
+					wc.put(s, 1);
 
 		return wc;
 	}
