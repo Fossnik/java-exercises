@@ -32,7 +32,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void countOneOfEachWord() {
         expectedWordCount.put("one", 1);
@@ -45,7 +44,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleOccurrencesOfAWord() {
         expectedWordCount.put("one", 1);
@@ -59,8 +57,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void handlesCrampedLists() {
         expectedWordCount.put("one", 1);
@@ -72,8 +69,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void handlesExpandedLists() {
         expectedWordCount.put("one", 1);
@@ -86,7 +82,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
@@ -102,7 +97,6 @@ public class WordCountTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
@@ -115,7 +109,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
@@ -126,8 +119,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void withApostrophes() {
         expectedWordCount.put("first", 1);
@@ -141,8 +133,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void withQuotations() {
         expectedWordCount.put("joe", 1);
@@ -157,8 +148,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void multipleSpacesNotDetectedAsAWord() {
         expectedWordCount.put("multiple", 1);
