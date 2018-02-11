@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet;
 import java.util.Collections;
 
 class Matrix {
@@ -11,6 +12,7 @@ class Matrix {
 	}
 
 	Set<MatrixCoordinate> getSaddlePoints() {
+		Set<MatrixCoordinate> remit = new HashSet<MatrixCoordinate>();
 
 		// test every point in matrix
 		boolean isSaddle = true;
@@ -35,12 +37,13 @@ class Matrix {
 					if (pointOfComparisonValue > values.get(y).get(col))
 						isSaddle = false;
 
-				if (isSaddle) {
-					return Collections.singleton(new MatrixCoordinate(row, col));
-				}
+				if (isSaddle)
+					remit.add(new MatrixCoordinate(row, col));
+
 			}
 		}
-		return Collections.singleton(new MatrixCoordinate(1, 0));
+
+		return remit;
 	}
 
 }
