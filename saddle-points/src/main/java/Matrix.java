@@ -12,29 +12,32 @@ class Matrix {
 	}
 
 	Set<MatrixCoordinate> getSaddlePoints() {
+		if (this.values.isEmpty())
+			return Collections.emptySet();
+
 		Set<MatrixCoordinate> remit = new HashSet<MatrixCoordinate>();
 
 		// test every point in matrix
 		boolean isSaddle = true;
-		int pointOfComparisonValue;
+		int pointValue;
 
-		int numRows = values.size();
-		int numColumns = values.get(0).size();
+		int numRows = this.values.size();
+		int numColumns = this.values.get(0).size();
 
 		for (int row = 0; row < numRows; row++) {
 			for (int col = 0; col < numColumns; col++) {
 
-				pointOfComparisonValue = values.get(row).get(col);
+				pointValue = this.values.get(row).get(col);
 				isSaddle = true;
 
-				// test whether GTE to each element in the row
+				// test whether GTE to each element in the same row
 				for (int x = 0; x < numRows; x++)
-					if (pointOfComparisonValue < values.get(row).get(x))
+					if (pointValue < this.values.get(row).get(x))
 						isSaddle = false;
 
-				// test whether LTE each in column
+				// test whether LTE to each element in the same column
 				for (int y = 0; y < numColumns; y++)
-					if (pointOfComparisonValue > values.get(y).get(col))
+					if (pointValue > this.values.get(y).get(col))
 						isSaddle = false;
 
 				if (isSaddle)
