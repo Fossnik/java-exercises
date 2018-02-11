@@ -62,7 +62,6 @@ public class MatrixTest {
         assertEquals(expectedSaddlePoints, matrix.getSaddlePoints());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCanIdentifySaddlePointInBottomRightCorner() {
         Matrix matrix = new Matrix(Arrays.asList(
