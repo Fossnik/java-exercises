@@ -3,7 +3,7 @@ import java.util.List;
 
 class Flattener {
 
-  private List<Object> remit = new ArrayList<>();
+	private List<Object> remit = new ArrayList<>();
 
 	List<?> flatten(List<?> input) {
 
