@@ -3,9 +3,17 @@ import java.util.List;
 
 class Flattener {
 
-  ArrayList<List> flatten(List input) {
+  private List<Object> remit = new ArrayList<>();
 
-    return new ArrayList<>(input);
-  }
+	List<?> flatten(List<?> input) {
+
+		for (Object element : input)
+			if (element instanceof List<?>)
+				flatten((List<?>)element);
+			else if (element != null)
+				remit.add(element);
+
+		return remit;
+	}
 
 }
