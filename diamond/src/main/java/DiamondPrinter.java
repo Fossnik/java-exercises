@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 class DiamondPrinter {
 
-  private static int depth;
   private static char max;
+  private static int depth;
 
   static List<String> printToList(char a) {
 
     List<String> remit = new ArrayList<String>();
-    
+
     max = (char) (a - 'A');
     depth = max * 2 + 1;
 
@@ -22,11 +22,11 @@ class DiamondPrinter {
     return remit;
   }
 
-  private static String printRow(char a) {
+  private static String printRow(char c) {
     String row = "";
     for (int i = 0; i < depth; i++)
-      if (i == max - (a-'A') || i == a-'A' + max)
-        row += a;
+      if (i == max - (c-'A') || i == (c-'A') + max)
+        row += c;
       else
         row += ' ';
 
