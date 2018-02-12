@@ -3,12 +3,13 @@ import java.util.ArrayList;
 
 class DiamondPrinter {
 
-  private static List<String> remit = new ArrayList<String>();
   private static int depth;
   private static char max;
 
   static List<String> printToList(char a) {
 
+    List<String> remit = new ArrayList<String>();
+    
     max = (char) (a - 'A');
     depth = max * 2 + 1;
 
