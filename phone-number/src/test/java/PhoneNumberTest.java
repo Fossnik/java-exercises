@@ -27,7 +27,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cleansNumbersWithDots() {
         final String expectedNumber = "2234567890";
@@ -38,7 +37,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cleansNumbersWithMultipleSpaces() {
         final String expectedNumber = "2234567890";
@@ -49,7 +47,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWhen9Digits() {
         expectedException.expect(IllegalArgumentException.class);
@@ -57,7 +54,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123456789");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWhen11DigitsDoesNotStartWith1() {
         expectedException.expect(IllegalArgumentException.class);
@@ -65,7 +61,6 @@ public class PhoneNumberTest {
         new PhoneNumber("22234567890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void validWhen11DigitsAndStartingWith1() {
         final String expectedNumber = "2234567890";
@@ -75,8 +70,7 @@ public class PhoneNumberTest {
                 expectedNumber, actualNumber
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void validWhen11DigitsAndStartingWith1EvenWithPunctuation() {
         final String expectedNumber = "2234567890";
@@ -87,7 +81,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWhenMoreThan11Digits() {
         expectedException.expect(IllegalArgumentException.class);
@@ -95,7 +88,6 @@ public class PhoneNumberTest {
         new PhoneNumber("321234567890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWithLetters() {
         expectedException.expect(IllegalArgumentException.class);
@@ -103,31 +95,27 @@ public class PhoneNumberTest {
         new PhoneNumber("123-abc-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidWithPunctuations() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(illegalCharacterExceptionMessage);
         new PhoneNumber("123-@:!-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfAreaCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(023) 456-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfAreaCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage(illegalAreaOrExchangeCodeMessage);
         new PhoneNumber("(123) 456-7890");
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void invalidIfExchangeCodeStartsWith0() {
         expectedException.expect(IllegalArgumentException.class);
@@ -135,7 +123,6 @@ public class PhoneNumberTest {
         new PhoneNumber("(223) 056-7890");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void invalidIfExchangeCodeStartsWith1() {
         expectedException.expect(IllegalArgumentException.class);
