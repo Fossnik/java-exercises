@@ -1,11 +1,11 @@
 class RunLengthEncoding {
 
   public String encode(String input) {
-    return "";
+    return input;
   }
 
   public String decode(String input) {
-    return "";
+    return input;
   }
 
 }
