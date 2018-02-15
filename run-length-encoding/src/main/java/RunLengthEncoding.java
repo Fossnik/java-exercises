@@ -29,7 +29,31 @@ class RunLengthEncoding {
 	}
 
   public String decode(String input) {
-    return input;
+    StringBuilder output = new StringBuilder("");
+		char[] ca = input.toCharArray();
+		String runLength;
+
+		int i = 0;
+		while (!input.isEmpty()) {
+			runLength = "";
+			try {
+				if (Character.isDigit(ca[i]))
+					while (Character.isDigit(ca[i]))
+						runLength += ca[i++];
+				else
+					runLength = "1";
+
+				for (int j = Integer.valueOf(runLength); j > 0; j--)
+					output.append(ca[i]);
+
+				i++;
+
+			} catch (Exception e) {
+				break;
+			}
+		}
+
+		return output.toString();
   }
 
 }
