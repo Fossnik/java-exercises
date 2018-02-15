@@ -47,10 +47,7 @@ class RunLengthEncoding {
 					output.append(ca[i]);
 
 				i++;
-
-			} catch (Exception e) {
-				break;
-			}
+			} catch (Exception e) {	break; }
 		}
 
 		return output.toString();
