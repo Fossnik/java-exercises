@@ -8,7 +8,7 @@ class PhoneNumber {
 			throw new IllegalArgumentException("Illegal character in phone number. Only digits, spaces, parentheses, hyphens or dots accepted.");
 
 		this.digits = input.replaceAll("\\D", "");
-		this.length = this.digits.length();
+		this.length = digits.length();
 
 		if (!(length == 10 || length == 11))
 				throw new IllegalArgumentException("Number must be 10 or 11 digits");
@@ -22,7 +22,7 @@ class PhoneNumber {
 	}
 
 	public String getNumber() {
-		return digits.substring(this.length - 10, this.length);
+		return digits.substring(length - 10, length);
 	}
 
 }
