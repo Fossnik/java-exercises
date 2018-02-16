@@ -1,27 +1,27 @@
 class RunLengthEncoding {
 
 	public static String encode(String input) {
-		StringBuilder output = new StringBuilder();
-		char a = '\r';
-		char b;
-		int i = 0;
-		Int count = 1;
-		while (!input.isEmpty()) try {
-			a = input.charAt(i);
-			b = input.charAt(++i);
+		if (input.isEmpty())
+			return "";
+		else
+			return compressText(input);
+	}
 
-			if (a == b) {
+	private static String compressText(String input) {
+		StringBuilder output = new StringBuilder();
+		char first = '0';
+		int count = 1;
+
+		for (char next : input.toCharArray())
+			if (first == next) {
 				count++;
 			} else {
-				output.append(count > 1 ? (count.toString() + a) : a);
+				output.append((count > 1 ? (Integer.toString(count) + first) : first));
 				count = 1;
+				first = next;
 			}
-		} catch (Exception e) {
-			output.append(count > 1 ? (count.toString() + a) : a);
-			break;
-		}
 
-		return output.toString();
+		return output.append((count > 1 ? (Integer.toString(count) + first) : first)).deleteCharAt(0).toString();
 	}
 
 	public static String decode(String input) {
