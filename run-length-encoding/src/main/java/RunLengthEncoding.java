@@ -5,7 +5,7 @@ class RunLengthEncoding {
 		char a = '\r';
 		char b;
 		int i = 0;
-		int count = 1;
+		Int count = 1;
 		while (!input.isEmpty()) try {
 			a = input.charAt(i);
 			b = input.charAt(++i);
@@ -13,11 +13,11 @@ class RunLengthEncoding {
 			if (a == b) {
 				count++;
 			} else {
-				output.append((count > 1 ? (Integer.toString(count) + a) : a));
+				output.append(count > 1 ? (count.toString() + a) : a);
 				count = 1;
 			}
 		} catch (Exception e) {
-			output.append((count > 1 ? (Integer.toString(count) + a) : a));
+			output.append(count > 1 ? (count.toString() + a) : a);
 			break;
 		}
 
@@ -32,7 +32,7 @@ class RunLengthEncoding {
 			while (Character.isDigit(input.charAt(i)))
 				prefix += input.charAt(i++);
 
-			int runLength = (prefix.equals("") ? 1 : Integer.valueOf(prefix));
+			int runLength = prefix.equals("") ? 1 : Integer.valueOf(prefix);
 			while (runLength-- > 0)
 				output.append(input.charAt(i));
 
