@@ -3,14 +3,26 @@ import java.util.List;
 
 class PrimeFactorsCalculator {
 
-	public static List<Long> calculatePrimeFactorsOf(Long input) {
-		List<Long> remit = new ArrayList<Long>();
+	private List<Long> remit = new ArrayList<Long>();
+	private Long divisor = 2L;
 
-		for (Long l = 2L; l < input / 2; l++)
-			if (input % l == 0)
-				remit.add(l);
+	public List<Long> calculatePrimeFactorsOf(Long input) {
 
-		return remit;
+		// base case
+		if (input < divisor) {
+			return remit;
+		} else if (input.equals(divisor)) {
+			remit.add(divisor);
+			return remit;
+		}
+
+		if (input % divisor == 0) {
+			remit.add(divisor);
+			return calculatePrimeFactorsOf(input / divisor);
+		} else {
+			divisor++;
+			return calculatePrimeFactorsOf(input);
+		}
 	}
 
 }
