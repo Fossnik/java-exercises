@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 class Flattener {
 
@@ -7,8 +8,11 @@ class Flattener {
 
 	List<?> flatten(List<?> input) {
 
-		for (Object element : input)
-			if (element instanceof List<?>)
+		Iterator<?> it = input.iterator();
+		Object element;
+
+		while (it.hasNext())
+			if ((element = it.next()) instanceof List<?>)
 				flatten((List<?>)element);
 			else if (element != null)
 				remit.add(element);
