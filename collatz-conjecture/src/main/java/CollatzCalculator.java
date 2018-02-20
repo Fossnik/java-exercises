@@ -1,13 +1,15 @@
 class CollatzCalculator {
 
-	int computeStepCount(int start) {
+	int computeStepCount(int n) {
 
-		if (start < 1) new IllegalArgumentException("Only natural numbers are allowed");
+		if (n < 1)
+			throw new IllegalArgumentException("Only natural numbers are allowed");
 
-		int steps = 0;
-		for (int n = start; n != 1; steps++)
-			if (n % 2) n = n / 2;
-			else n = n * 3 + 1;
+		for (int steps = 0; n != 1; steps++)
+			if (n % 2 == 0)
+				n = n / 2;
+			else
+				n = n * 3 + 1;
 
 		return steps;
 	}
