@@ -7,14 +7,24 @@ public class Allergies {
 	private List<Allergen> list = new ArrayList<>();
 
 	Allergies(int score) {
-		String bools = Integer.toBinaryString(score);
-
-		while (bools.length() < Allergen.values().length)
-			bools = '0' + bools;
-
-		int i = Allergen.values().length;
+		int numEnums = Allergen.values().length;
+		int maxScore = 0;
 		for (Allergen a : Allergen.values())
-			if (bools.charAt(--i) == '1')
+			maxScore += a.getScore();
+
+		String isAllergy = Integer.toBinaryString(score);
+
+		// String length normalization
+		if (score > maxScore)
+			while (isAllergy.length() > numEnums)
+				isAllergy = isAllergy.substring(1);
+		else
+			while (isAllergy.length() < numEnums)
+				isAllergy = '0' + isAllergy;
+
+		int i = numEnums;
+		for (Allergen a : Allergen.values())
+			if (isAllergy.charAt(--i) == '1')
 				list.add(a);
 	}
 
