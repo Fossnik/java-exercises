@@ -1,20 +1,29 @@
 import java.util.Random;
+import java.util.HashSet;
 
 class Robot {
 
 	private String name;
+	private HashSet nameRegistrar = new HashSet<>();
 
 	public Robot() {
-		this.name = "";
 
-		Random r = new Random();
+		do {
+			this.name = "";
 
-		this.name += (char)(r.nextInt(26) + 'A');
-		this.name += (char)(r.nextInt(26) + 'A');
+			Random r = new Random();
 
-		this.name += r.nextInt(10);
-		this.name += r.nextInt(10);
-		this.name += r.nextInt(10);
+			this.name += (char) (r.nextInt(26) + 'A');
+			this.name += (char) (r.nextInt(26) + 'A');
+
+			this.name += r.nextInt(10);
+			this.name += r.nextInt(10);
+			this.name += r.nextInt(10);
+
+		} while (nameRegistrar.contains(this.name));
+
+		nameRegistrar.add(this.name);
+
 	}
 
 	public String getName() {
