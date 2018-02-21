@@ -8,6 +8,9 @@ class Bob {
 		if (isShouting())
 			return "Whoa, chill out!";
 
+		if (isQuestion())
+			return "Sure.";
+
 		return "Whatever.";
 	}
 
@@ -20,6 +23,10 @@ class Bob {
 			return true;
 
 		return false;
+	}
+
+	private boolean isQuestion() {
+		return impetus.endsWith("?");
 	}
 
 }
