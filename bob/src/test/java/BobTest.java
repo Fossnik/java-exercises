@@ -37,7 +37,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingAQuestion() {
         assertEquals(
@@ -46,7 +45,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingANumericQuestion() {
         assertEquals(
@@ -55,7 +53,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void askingGibberish() {
         assertEquals(
@@ -104,7 +101,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void questionWithOnlyNumbers() {
         assertEquals(
@@ -134,7 +130,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void nonLettersWithQuestion() {
         assertEquals(
@@ -142,7 +137,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void prattlingOn() {
         assertEquals(
@@ -192,7 +186,6 @@ public class BobTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void endingWithWhiteSpace() {
         assertEquals(
