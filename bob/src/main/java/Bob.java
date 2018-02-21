@@ -21,7 +21,7 @@ class Bob {
 	}
 
 	private boolean isShouting() {
-		return impetus.endsWith("!") || (isForceFull() && !isQuestion());
+		return (impetus.endsWith("!") && isForceFull())|| (isForceFull() && !isQuestion());
 	}
 
 	private boolean isQuestion() {
@@ -30,7 +30,15 @@ class Bob {
 
 	private boolean isForceFull() {
 		// if there are letters, none are lowercase
-		return impetus.matches("[A-Z\\s]+") && impetus.matches("[^a-z]+");
+		if (impetus.matches(".*[A-Z].*")) {
+			for (char c : impetus.toCharArray())
+				if (Character.isLowerCase(c))
+					return false;
+
+			return true;
+		}
+
+		return false;
 	}
 
 }
