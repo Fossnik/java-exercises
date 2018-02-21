@@ -8,10 +8,10 @@ class Bob {
 		if (isShouting())
 			return "Whoa, chill out!";
 
-		if (isYelledQuestion())
+		if (isForceFull() && isQuestion())
 			return "Calm down, I know what I'm doing!";
 
-		if (isQuestion())
+		if (isQuestion() && !isForceFull())
 			return "Sure.";
 
 		if (impetus.isEmpty())
@@ -21,19 +21,16 @@ class Bob {
 	}
 
 	private boolean isShouting() {
-		// if there are letters, none are lowercase
-		if (impetus.matches("[A-Z\\s]+") && impetus.matches("[^a-z]+"))
-			return true;
-
-		return impetus.endsWith("!");
+		return impetus.endsWith("!") || (isForceFull() && !isQuestion());
 	}
 
 	private boolean isQuestion() {
 		return impetus.endsWith("?");
 	}
 
-	private boolean isYelledQuestion() {
-		return impetus.matches("[A-Z\\s]+") && impetus.matches("[^a-z]+") && impetus.endsWith("?");
+	private boolean isForceFull() {
+		// if there are letters, none are lowercase
+		return impetus.matches("[A-Z\\s]+") && impetus.matches("[^a-z]+");
 	}
 
 }
