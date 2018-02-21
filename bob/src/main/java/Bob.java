@@ -18,8 +18,8 @@ class Bob {
 		if (impetus.endsWith("!"))
 			return true;
 
-		// no lowercase characters
-		if (impetus.matches("[^a-z]+"))
+		// if there are letters, none are lowercase
+		if (impetus.matches("[A-Z\\s]+") && impetus.matches("[^a-z]+"))
 			return true;
 
 		return false;
