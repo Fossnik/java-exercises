@@ -14,6 +14,9 @@ class Bob {
 		if (isQuestion())
 			return "Sure.";
 
+		if (impetus.isEmpty())
+			return "Fine. Be that way!";
+
 		return "Whatever.";
 	}
 
