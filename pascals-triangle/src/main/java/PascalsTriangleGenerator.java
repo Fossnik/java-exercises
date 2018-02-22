@@ -4,6 +4,9 @@ class PascalsTriangleGenerator {
 	private int size;
 
 	public int[][] generateTriangle(int size) {
+		if (size < 1)
+			throw new IllegalArgumentException;
+
 		this.size = size;
 		this.triangle = new int[size][size];
 
