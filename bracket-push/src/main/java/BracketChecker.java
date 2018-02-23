@@ -1,37 +1,33 @@
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.ArrayList;
 
 class BracketChecker {
 
-	private String input;
+	private ArrayList<Character> input = new ArrayList<>();
 
 	BracketChecker(String input) {
-		this.input = input;
+		for (Character c : input.replaceAll("[^\\{\\(\\[\\}\\)\\]]", "").toCharArray())
+			this.input.add(c);
 	}
 
 	public boolean areBracketsMatchedAndNestedCorrectly() {
-		// test for left/right bracket parity
-		if (!(
-			   input.replaceAll("\\[","").length() == input.replaceAll("\\]", "").length()
-		    && input.replaceAll("\\(","").length() == input.replaceAll("\\)", "").length()
-		    && input.replaceAll("\\{","").length() == input.replaceAll("\\}", "").length()
-		))
-			return false;
+		char mirror = '\0';
 
-		// compile stack of all left brackets
-		Stack<Character> left = new Stack<>();
-		for (char l : input.replaceAll("[^\\[\\(\\{]", "").toCharArray())
-			left.push(l);
+		while (! input.isEmpty()) {
 
-		// test if chiral-right brackets unpack in symmetric order with mirrors
-		HashMap<Character, Character> mirrors = new HashMap<Character, Character>();
-		mirrors.put('{','}');
-		mirrors.put('[',']');
-		mirrors.put('(',')');
+			Character first = input.get(0);
 
-		for (char r : input.replaceAll("[^\\]\\)\\}]", "").toCharArray())
-			if (mirrors.get(left.pop()) != r)
+			if      (first == '[') mirror = ']';
+			else if (first == '{') mirror = '}';
+			else if (first == '(') mirror = ')';
+
+			input.remove(0);
+
+			if (input.indexOf(mirror) == -1)
 				return false;
+			else
+				input.remove(input.indexOf(mirror));
+
+		}
 
 		return true;
 	}
