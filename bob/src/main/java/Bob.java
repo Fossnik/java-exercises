@@ -21,7 +21,7 @@ class Bob {
 	}
 
 	private boolean isShouting() {
-		return (impetus.endsWith("!") && isForceFull())|| (isForceFull() && !isQuestion());
+		return (impetus.endsWith("!") && isForceFull()) || (isForceFull() && !isQuestion());
 	}
 
 	private boolean isQuestion() {
