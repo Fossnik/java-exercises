@@ -7,10 +7,7 @@ class BracketChecker {
 	}
 
 	public boolean areBracketsMatchedAndNestedCorrectly() {
-		if (input.isEmpty())
-			return true;
-
-		return testString(this.input);
+		return input.isEmpty() || hasInternalSymmetry(input) && testString(this.input);
 	}
 
 	private boolean testString(String string) {
