@@ -1,8 +1,8 @@
 
 class SpaceAge {
 
-	static final double secondsInAnEarthYear = 31557600;
-	protected double secondsOfAge;
+	private static final double secondsInAnEarthYear = 31557600;
+	private double secondsOfAge;
 
 	SpaceAge(double seconds) {
 		this.secondsOfAge = seconds;
