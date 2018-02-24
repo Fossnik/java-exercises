@@ -1,35 +1,75 @@
-import java.util.ArrayList;
-
 class BracketChecker {
 
-	private ArrayList<Character> input = new ArrayList<>();
+	private String input;
 
 	BracketChecker(String input) {
-		for (Character c : input.replaceAll("[^\\{\\(\\[\\}\\)\\]]", "").toCharArray())
-			this.input.add(c);
+		this.input = input.replaceAll("[^\\{\\(\\[\\}\\)\\]]", "");
 	}
 
 	public boolean areBracketsMatchedAndNestedCorrectly() {
-		char mirror = '\0';
+		if (input.isEmpty())
+			return true;
 
-		while (! input.isEmpty()) {
+		return testString(this.input);
+	}
 
-			Character first = input.get(0);
+	private boolean testString(String string) {
 
-			if      (first == '[') mirror = ']';
-			else if (first == '{') mirror = '}';
-			else if (first == '(') mirror = ')';
+		int end = opposingBracketIndex(string);
+		if (end == -1)
+			return false;
 
-			input.remove(0);
+		String substring = string.substring(1, end);
 
-			if (input.indexOf(mirror) == -1)
-				return false;
-			else
-				input.remove(input.indexOf(mirror));
-
-		}
+		if (!hasInternalSymmetry(substring))
+			return false;
+		else
+			testString(substring);
 
 		return true;
+	}
+
+	private int opposingBracketIndex(String string) {
+		// returns the index of the opposite bracket.
+
+		if (string.length() < 2)
+			return -1;
+
+		char bracket = string.charAt(0);
+		char mirror = mirror(bracket);
+
+		if (mirror == '\0')
+			return -1;
+
+		// note the number of forward brackets -
+		// an additional forward bracket means searching past the first matching bracket
+		int index = 0;
+		int depth = 0;
+		while (index < string.length())
+			if (string.charAt(++index) == mirror)
+				if (depth == 0)
+					return index;
+				else
+					depth--;
+			else if (string.charAt(index) == bracket)
+				depth++;
+
+		return -1;
+	}
+
+	private boolean hasInternalSymmetry (String s) {
+		// input has an equivalent quantity of the respective left and right brackets?
+		return
+				   s.replaceAll("\\[", "").length() == s.replaceAll("\\]", "").length()
+				&& s.replaceAll("\\(", "").length() == s.replaceAll("\\)", "").length()
+				&& s.replaceAll("\\{", "").length() == s.replaceAll("\\}", "").length();
+	}
+
+	private char mirror(char bracket) {
+		if (bracket == '[') return ']';
+		if (bracket == '{') return '}';
+		if (bracket == '(') return ')';
+		return '\0';
 	}
 
 }
