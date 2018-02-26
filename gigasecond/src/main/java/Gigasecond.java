@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 class Gigasecond {
-	protected LocalDateTime birthDateTime;
+	private LocalDateTime birthDateTime;
 
 	Gigasecond(LocalDate birthDate) {
 		// atStartOfDay() constructs a LocalDateTime from a LocalDate
