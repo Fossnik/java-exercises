@@ -19,6 +19,9 @@ class Series {
 	}
 
 	public List<List<Integer>> slices(int n) {
+		if (n > series.length())
+			throw new IllegalArgumentException("Slice to Large; Series to Small");
+
 		List<List<Integer>> list = new ArrayList<>();
 
 		for (int i = 0; i <= series.length() - n; i++)
