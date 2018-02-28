@@ -36,7 +36,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void keepsTheDigitOrderIfReversed() {
         Series series = new Series("9876543210");
@@ -47,7 +46,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void keepsArbitraryDigitOrder() {
         Series series = new Series("936923468");
@@ -58,7 +56,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByOne() {
         Series series = new Series("01234");
@@ -75,7 +72,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByTwo() {
         Series series = new Series("98273463");
@@ -94,7 +90,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByThree() {
         Series series = new Series("01234");
@@ -109,7 +104,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByThreeWithDuplicateDigits() {
         Series series = new Series("31001");
@@ -124,7 +118,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByFour() {
         Series series = new Series("91274");
@@ -138,7 +131,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canSliceByFive() {
         Series series = new Series("81228");
@@ -151,7 +143,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void throwsAnErrorIfNotEnoughDigitsToSlice() {
         expectedException.expect(IllegalArgumentException.class);

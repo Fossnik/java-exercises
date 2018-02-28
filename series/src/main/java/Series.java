@@ -21,7 +21,7 @@ class Series {
 	public List<List<Integer>> slices(int n) {
 		List<List<Integer>> list = new ArrayList<>();
 
-		for (int i = 0; i < series.length() - n; i++)
+		for (int i = 0; i <= series.length() - n; i++)
 			list.add(getListDigits(series.substring(i, i + n)));
 
 		return list;
