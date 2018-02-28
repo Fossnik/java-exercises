@@ -26,7 +26,6 @@ public class SeriesTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hasDigitsLong() {
         Series series = new Series("0123456789");

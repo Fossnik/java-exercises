@@ -12,18 +12,27 @@ class Series {
 	public List<Integer> getDigits() {
 		List<Integer> list = new ArrayList<Integer>();
 
-		list.add(0);
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.add(4);
+		for (char c : series.toCharArray())
+			list.add(Character.getNumericValue(c));
 
 		return list;
 	}
 
-	public List<List<Integer>> slices (int n) {
+	public List<List<Integer>> slices(int n) {
+		List<List<Integer>> list = new ArrayList<>();
 
-		return new ArrayList<>();
+		for (int i = 0; i < series.length() - n; i++)
+			list.add(getListDigits(series.substring(i, i + n)));
+
+		return list;
+	}
+
+	private List<Integer> getListDigits(String s) {
+		List<Integer> list = new ArrayList<>();
+		for (char c : s.toCharArray())
+			list.add(Character.getNumericValue(c));
+
+		return list;
 	}
 
 }
