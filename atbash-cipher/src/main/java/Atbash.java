@@ -3,12 +3,15 @@ class Atbash {
 	public static String encode(String input) {
 		String remit = "";
 		int index = 0;
-		for (char c : input.toCharArray()) {
+		for (char c : input.replaceAll("[^a-zA-Z0-9]", "").toCharArray()) {
 			if (index != 0 && index % 5 == 0)
 				remit += " ";
 
 			if (Character.isAlphabetic(c)) {
 				remit += switcheroo(c);
+				index++;
+			} else if (Character.isDigit(c)) {
+				remit += c;
 				index++;
 			}
 		}
@@ -21,6 +24,8 @@ class Atbash {
 		for (char c : input.toCharArray())
 			if (Character.isAlphabetic(c))
 				remit += switcheroo(c);
+			else if (Character.isDigit(c))
+				remit += c;
 
 		return remit;
 	}
