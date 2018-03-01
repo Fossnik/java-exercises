@@ -7,11 +7,8 @@ class Atbash {
 			if (index != 0 && index % 5 == 0)
 				remit += " ";
 
-			if (Character.isAlphabetic(c)) {
+			if (Character.isLetterOrDigit(c)) {
 				remit += switcheroo(c);
-				index++;
-			} else if (Character.isDigit(c)) {
-				remit += c;
 				index++;
 			}
 		}
@@ -22,15 +19,16 @@ class Atbash {
 	public static String decode(String input) {
 		String remit = "";
 		for (char c : input.toCharArray())
-			if (Character.isAlphabetic(c))
+			if (Character.isLetterOrDigit(c))
 				remit += switcheroo(c);
-			else if (Character.isDigit(c))
-				remit += c;
 
 		return remit;
 	}
 
 	private static char switcheroo(char input) {
+		if (Character.isDigit(input))
+			return input;
+
 		int zeroIndex = Character.toLowerCase(input) - 'a';
 		return (char)('z' - zeroIndex);
 	}
