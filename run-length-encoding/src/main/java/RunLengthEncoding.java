@@ -1,10 +1,6 @@
 class RunLengthEncoding {
 
 	public static String encode(String input) {
-		return input.isEmpty() ? new String("") : compressText(input);
-	}
-
-	private static String compressText(String input) {
 		StringBuilder output = new StringBuilder();
 		char first = '0';
 		int count = 1;
@@ -22,10 +18,6 @@ class RunLengthEncoding {
 	}
 
 	public static String decode(String input) {
-		return input.isEmpty() ? new String("") : decompressText(input);
-	}
-
-	private static String decompressText(String input) {
 		StringBuilder output = new StringBuilder();
 		String prefix = "";
 
