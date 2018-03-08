@@ -4,7 +4,7 @@ import java.util.HashSet;
 class Robot {
 
 	private String name;
-	private HashSet nameRegistrar = new HashSet<>();
+	private static HashSet nameRegistrar = new HashSet<>();
 
 	public Robot() {
 
