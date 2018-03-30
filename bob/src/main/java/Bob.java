@@ -8,11 +8,11 @@ class Bob {
 		if (isShouting())
 			return "Whoa, chill out!";
 
-		if (isForceFull() && isQuestion())
-			return "Calm down, I know what I'm doing!";
-
-		if (isQuestion() && !isForceFull())
-			return "Sure.";
+		if (isQuestion())
+			if (isForceFull())
+				return "Calm down, I know what I'm doing!";
+			else
+				return "Sure.";
 
 		if (impetus.isEmpty())
 			return "Fine. Be that way!";
