@@ -14,13 +14,13 @@ public class Transpose {
 		String remit = "";
 		while (queueList.stream().anyMatch(queue -> !queue.isEmpty())) {
 			for (Queue queue : queueList)
-				remit += queue.poll();
+				remit += (queue.peek() != null ? queue.poll() : " ");
 
-			remit += "\n";
+			remit += '\n';
 		}
 
 		// remove superfluous newline
-		return remit.substring(0, remit.length() - 1);
+		return remit.substring(0, remit.length() - 1).trim();
 	}
 
 	private Queue makeQueue(String s) {
