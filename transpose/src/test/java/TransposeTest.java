@@ -21,7 +21,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoCharactersInARow() {
         String input = "A1";
