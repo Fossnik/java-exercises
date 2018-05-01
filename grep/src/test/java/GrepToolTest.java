@@ -288,7 +288,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesSeveralMatchesCaseInsensitiveFlag() {
         String expected = "iliad.txt:Caused to Achaia's host, sent many a soul\n"
@@ -311,7 +310,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesSeveralMatchesInvertedFlag() {
         String expected = "iliad.txt:Achilles sing, O Goddess! Peleus' son;\n"
@@ -327,7 +325,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesOneMatchEntireLinesFlag() {
         String expected = "midsummer-night.txt:But I beseech your grace that I may know";
@@ -341,7 +338,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesOneMatchMultipleFlags() {
         String expected = "paradise-lost.txt:4:With loss of Eden, till one greater Man";
@@ -355,7 +351,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesNoMatchesVariousFlags() {
         String expected = "";
