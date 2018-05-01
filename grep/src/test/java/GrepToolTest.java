@@ -217,7 +217,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileNoMatchesVariousFlags() {
         String expected = "";
@@ -231,7 +230,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesOneMatchNoFlags() {
         String expected = "iliad.txt:Of Atreus, Agamemnon, King of men.";

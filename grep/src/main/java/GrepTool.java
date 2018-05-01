@@ -14,8 +14,11 @@ class GrepTool{
 			List<String> lines = getLines(file);
 			for (int lineNumber = 0; lineNumber < lines.size(); lineNumber++) {
 				String line = lines.get(lineNumber);
-				if (Matches(phrase, args, line))
+				if (Matches(phrase, args, line)) {
+					if (files.size() > 1)
+						remit += file + ":";
 					remit += args.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
+				}
 			}
 		}
 
