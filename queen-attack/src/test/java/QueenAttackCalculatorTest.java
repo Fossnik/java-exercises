@@ -16,7 +16,7 @@ public class QueenAttackCalculatorTest {
         new Queen(2, 2);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testCreateQueenMustHavePositiveRow() {
         expectedException.expect(IllegalArgumentException.class);
@@ -25,7 +25,6 @@ public class QueenAttackCalculatorTest {
         new Queen(-2, 2);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveRowOnBoard() {
         expectedException.expect(IllegalArgumentException.class);
@@ -34,7 +33,6 @@ public class QueenAttackCalculatorTest {
         new Queen(8, 4);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHavePositiveColumn() {
         expectedException.expect(IllegalArgumentException.class);
@@ -43,7 +41,6 @@ public class QueenAttackCalculatorTest {
         new Queen(2, -2);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveColumnOnBoard() {
         expectedException.expect(IllegalArgumentException.class);
@@ -52,7 +49,6 @@ public class QueenAttackCalculatorTest {
         new Queen(4, 8);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCannotAttack() {
         final QueenAttackCalculator calculator
@@ -61,7 +57,6 @@ public class QueenAttackCalculatorTest {
         assertFalse(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameRow() {
         final QueenAttackCalculator calculator
@@ -70,7 +65,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameColumn() {
         final QueenAttackCalculator calculator
@@ -79,7 +73,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFirstDiagonal() {
         final QueenAttackCalculator calculator
@@ -88,7 +81,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnSecondDiagonal() {
         final QueenAttackCalculator calculator
@@ -97,7 +89,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnThirdDiagonal() {
         final QueenAttackCalculator calculator
@@ -106,7 +97,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFourthDiagonal() {
         final QueenAttackCalculator calculator
@@ -115,7 +105,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testNullPositionsNotAllowed() {
         expectedException.expect(IllegalArgumentException.class);
@@ -124,7 +113,6 @@ public class QueenAttackCalculatorTest {
         new QueenAttackCalculator(null, new Queen(0, 7));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensMustNotOccupyTheSameSquare() {
         expectedException.expect(IllegalArgumentException.class);
