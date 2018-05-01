@@ -13,6 +13,12 @@ class QueenAttackCalculator{
 		int rowDiff = abs(this.q1.row - this.q2.row);
 		int colDiff = abs(this.q1.col - this.q2.col);
 
+		if (this.q1.row == this.q2.row)
+			return true;
+
+		if (this.q1.col == this.q2.col)
+			return true;
+
 		return rowDiff == colDiff;
 	}
 }
