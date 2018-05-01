@@ -243,7 +243,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesSeveralMatchesNoFlags() {
         String expected = "midsummer-night.txt:Nor how it may concern my modesty,\n"
@@ -259,7 +258,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesSeveralMatchesPrintLineNumbersFlag() {
         String expected = "midsummer-night.txt:5:But I beseech your grace that I may know\n"
@@ -276,7 +274,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleFilesOneMatchPrintFileNamesFlag() {
         String expected = "iliad.txt\n"

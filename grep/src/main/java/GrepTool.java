@@ -44,8 +44,10 @@ class GrepTool{
 		String remit = "";
 		for (String file : files)
 			for (String line : getLines(file))
-				if (line.contains(phrase))
-					remit += file;
+				if (line.contains(phrase)) {
+					remit += file + '\n';
+					break;
+				}
 
 		return remit.trim();
 	}
