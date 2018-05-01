@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 class GrepTool{
-	String grep(String phrase, List<String> arguments, List<String> files) {
+	String grep(String phrase, List<String> args, List<String> files) {
 		String remit = "";
 
 		for (String file : files) {
 			List<String> lines = getLines(file);
-			String line = "";
-			for (int lineNumber = 1; lineNumber < lines.size(); line = lines.get(lineNumber++))
-				if (line.contains(phrase))
-					remit += arguments.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
+			for (int lineNumber = 0; lineNumber < lines.size(); lineNumber++) {
+				String line = lines.get(lineNumber);
+				if (line.contains(phrase) ||
+						args.contains("-i") && line.toLowerCase().contains(phrase.toLowerCase()))
+					remit += args.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
+			}
 		}
 
-		return remit.substring(0, remit.length() - 1);
+		return remit.trim();
 	}
 
 	private List<String> getLines(String path) {
