@@ -117,7 +117,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileOneMatchEntireLinesFlag() {
         String expected = "With loss of Eden, till one greater Man";

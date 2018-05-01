@@ -14,13 +14,24 @@ class GrepTool{
 			List<String> lines = getLines(file);
 			for (int lineNumber = 0; lineNumber < lines.size(); lineNumber++) {
 				String line = lines.get(lineNumber);
-				if (line.contains(phrase) ||
-						args.contains("-i") && line.toLowerCase().contains(phrase.toLowerCase()))
+				if (Matches(phrase, args, line))
 					remit += args.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
 			}
 		}
 
 		return remit.trim();
+	}
+
+	private boolean Matches(String phrase, List<String> args, String line) {
+		if (args.contains("-i")) {
+			phrase = phrase.toLowerCase();
+			line = line.toLowerCase();
+		}
+
+		if (args.contains("-x"))
+			return line.equals(phrase);
+
+		return line.contains(phrase);
 	}
 
 	private String printFileNames(List<String> files, String phrase) {
