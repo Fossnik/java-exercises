@@ -1,3 +1,5 @@
+import static java.lang.Math.abs;
+
 class QueenAttackCalculator{
 	private Queen q1;
 	private Queen q2;
@@ -8,11 +10,8 @@ class QueenAttackCalculator{
 	}
 
 	boolean canQueensAttackOneAnother() {
-		int rowDiff = (this.q1.row - this.q2.row);
-		rowDiff = rowDiff * rowDiff / rowDiff;
-
-		int colDiff = (this.q1.col - this.q2.col);
-		colDiff = colDiff * colDiff / colDiff;
+		int rowDiff = abs(this.q1.row - this.q2.row);
+		int colDiff = abs(this.q1.col - this.q2.col);
 
 		return rowDiff == colDiff;
 	}
