@@ -31,6 +31,9 @@ class GrepTool{
 		if (args.contains("-x"))
 			return line.equals(phrase);
 
+		if (args.contains("-v"))
+			return !line.contains(phrase);
+
 		return line.contains(phrase);
 	}
 
