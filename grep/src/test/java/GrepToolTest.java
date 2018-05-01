@@ -104,7 +104,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileOneMatchPrintFileNamesFlag() {
         String expected = "paradise-lost.txt";

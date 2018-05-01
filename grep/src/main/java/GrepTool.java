@@ -7,6 +7,9 @@ class GrepTool{
 	String grep(String phrase, List<String> args, List<String> files) {
 		String remit = "";
 
+		if (args.contains("-l"))
+			return printFileNames(files, phrase);
+
 		for (String file : files) {
 			List<String> lines = getLines(file);
 			for (int lineNumber = 0; lineNumber < lines.size(); lineNumber++) {
@@ -16,6 +19,16 @@ class GrepTool{
 					remit += args.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
 			}
 		}
+
+		return remit.trim();
+	}
+
+	private String printFileNames(List<String> files, String phrase) {
+		String remit = "";
+		for (String file : files)
+			for (String line : getLines(file))
+				if (line.contains(phrase))
+					remit += file;
 
 		return remit.trim();
 	}
