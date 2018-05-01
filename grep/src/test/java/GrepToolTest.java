@@ -78,7 +78,6 @@ public class GrepToolTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void oneFileOneMatchPrintLineNumbersFlag() {
         String expected = "2:Of that Forbidden Tree, whose mortal tast";
