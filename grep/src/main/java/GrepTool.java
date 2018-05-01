@@ -9,14 +9,10 @@ class GrepTool{
 
 		for (String file : files) {
 			List<String> lines = getLines(file);
-			for (int lineNumber = 1; lineNumber < lines.size(); lineNumber++) {
-				String line = lines.get(lineNumber);
+			String line = "";
+			for (int lineNumber = 1; lineNumber < lines.size(); line = lines.get(lineNumber++))
 				if (line.contains(phrase))
-					if (arguments.contains("-n"))
-						remit += (lineNumber+1) + ":" + line + '\n';
-					else
-						remit += line + '\n';
-			}
+					remit += arguments.contains("-n") ? (lineNumber + 1) + ":" + line + '\n' : line + '\n';
 		}
 
 		return remit.substring(0, remit.length() - 1);
